@@ -1,0 +1,35 @@
+Current Plan:
+=============
+
+1.1) Implement User Service
+1.2) Implement Address Service
+
+Model:
+- Define Attributes
+
+Service Implementation:
+- Ensure CRUD operations and Endpoints without any strict validations
+- Think possible validations for each required fields, document briefly in one doc and Add them to controller level (to validate the incoming data at the endpoints to process them further) and accordingly write API endpoints tests
+
+Postman Testing:
+- Create folder of requests, each requests has tests
+- Tests should have at least have expected returned status code check & expected output data checks
+
+2) Implement Login Service for Users
+- Understand spring security
+- Use it while implementing it in 3rd party login service
+- It will have custom email-password login option also
+- forgot password
+- verification of email
+- explore available authentication ways (token based, session based, anything else)
+- call back URL
+- etc will be decided further
+
+
+Parallel Tasks:
+|1| Explore a good implementation or library for different level of logging message and generate log files
+
+
+
+
+

@@ -1,0 +1,217 @@
+Purpose of Application: provide an interface for managing client orders
+
+==================
+Usecases Analysis:
+==================
+
+product company [APP USER]:
+- has company profile
+- has products
+- has storage house
+- has clients
+
+company_profile:
+- has admin user
+- has company name
+- has company address
+- has contact details [business email, contact number]
+- has other details [about us]
+
+products:
+- has name
+- has descriptiion
+- has price
+- has other details
+
+storage_house:
+- has storage house manager
+- has location/address
+- has products & quantity & capacity
+
+client:
+- has client profile
+- has contact persons
+- places orders
+
+order:
+- has products and quantities
+- has bill details
+
+
+User Types:
+- storage house manager
+- client contact person
+- comapny admin
+
+=======
+Tables:
+=======
+
+user
+address
+company_profile
+product
+storage_house
+stock
+order
+order_details
+
+
+
+=================
+Table Attributes:
+=================
+user {
+	user_id [PK],
+	name (firstname, lastname),
+	email [unique],
+	password [validated],
+	phone_number [unique],
+	address [FK],
+	user_type {storage_house_manager, client_contact_person, company_admin}
+}
+
+address {
+	address_id [PK],
+	name [Not Null],
+	contact_number [validated],
+	number, 	//house no, floor no, plot number... 
+	structure_name, 		// building name, society name, company name.... 
+	street,
+	landmark,
+	city,
+	pincode [validated],
+	district,
+	state,
+	country
+}
+
+#pincode_location {
+	pincode,
+	latitude,
+	altitude
+}
+
+@city
+@district
+@state
+@country
+
+client_contact_person {
+	client_contact_person_id [FK],
+	client_id [FK],
+	is_primary
+}
+
+company_profile {
+	company_id [PK],
+	name,
+	address [FK],
+	email [unique],
+	phone_number [validated],
+	about
+}
+
+product {
+	product_id [PK],
+	name,
+	description [NN],
+	price [+],
+	adhoc_info
+}
+
+storage_house_manager {
+	storage_house_manager_id [FK],
+	storage_house_id [FK],
+	is_primary
+}
+
+storage_house {
+	storage_house_id [PK],
+	storage_house_manager_id [FK],
+	address [FK]
+}
+
+stock {
+	storage_house_id,
+	product_id,
+	quantity,
+	capacity
+}
+
+order {
+	order_id [PK],
+	order_number [unique],
+	storage_house_id [FK],
+	client_id [FK],
+	client_contact_person_id [FK],
+	bill_amount,
+	order_status {pending, placed, cancelled, dispatched, delivered},
+	delivery_address_id [FK],
+	delivery_date
+}
+
+order_details {
+	order_id [FK],
+	producut_id [FK],
+	quantity
+}
+
+%{
+created_by,
+created_at,
+updated_by,
+updated_at
+}
+
+========
+Signs:
+========
+#: Future scope
+@: Pre-loaded data [https://countrystatecity.in/]
+%: Common set of attributes
+
+
+
+==========================================================================
+- OAuth2, Authenticator
+- File Handling [Atleast basic uploading & downloading]
+- Usages of different APIs [cloud storages, Map Services, login services]
+- Messaging service [Implemented own or via some other APIs]
+- Any Smart AI model usage
+==========================================================================
+
+
+=======================
+Advanced Specification:
+=======================
+- KYC for Verification
+- Google Map for Address
+- Payment Gateways
+- Chatting Windows/Comments
+
+
+Payment Module 
+Return Policy
+Transportation & Delivery Service
+Proper associated representatives at both sides
+Different type of customers - end consumer, retailer, wholesaler, Organization
+Cost Management FI
+Efficiency
+inter-site transfer
+invocing [explore further] FI
+contracts
+
+
+Advance:
+Analytics
+Performance Management FI
+
+
+
+
+SCM:
+====
+Procurement [Inventory management] 
+=> Sales and Distribution [ storage management, order management ]
+=> Phsical Distribution [ Transportation & Delivery Service]

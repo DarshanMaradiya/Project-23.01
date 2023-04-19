@@ -1,0 +1,53 @@
+- Manage Error Messages in separate files [Resource Bundle]
+- Decide the approach for storing data that follows this pattern:- property: {List of values} exploring the case to case working of indexes and considering the performance
+- Decide whetehr to keep an exisiting unique value as a primary key or generate seperate id for primary key
+- Setup Company Logo
+- Setup company profile: clients, success stories, usages
+- HSN etc codes with products
+- Stock types
+- INFINTE Warehouse Capacity for stock to be handled
+- 
+
+
+
+
+
+
+--------------------------
+user
+role (privilege)
+privilege
+assigned_roles (user, role)
+company
+employee
+office
+warehouse
+stock
+address
+products
+client
+order
+quotation
+payment
+transaction
+
+
+
+User <- List<Role>
+
+Role <- List<privilige>
+
+
+Company
+
+name
+address
+about
+contact_no
+
+
+PRESIDENT
+ADMIN
+SITE_HEAD
+WAREHOUSE_MANAGER
+WAREHOUSE_WORKER

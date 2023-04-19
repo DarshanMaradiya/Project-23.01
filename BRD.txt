@@ -1,0 +1,153 @@
+goods = product/service
+
+Order Management System:
+========================
+
+Q. Why project initiated?
+- 
+
+Q. What problem will be solved by the solution delivered through your project?
+- There are companies who are doing businesses by providing goods to their clients.
+- A typical process followed is as below:
+	- client explores goods
+	- client inquires about price
+	- client places orders in certain quantity
+	- suppliers fulfils orders while managing the stocks perhaps for different locations also altogether
+	- Actually deliver goods via some delivery/logistics service at some address
+- Our solution will do the following:
+	- Automate the process
+	- maintain the records
+	- increases the visibilities
+	- will give insights about business
+
+Q. Why solution is required?
+- To save time
+- To reduce errors and flaws in the order cycle
+- To be able to track the process/progress
+- To better maintain the past records
+- To plan in better way for future
+
+Q. What are the primary purposes that is served by the solution?
+- To automate the process of Order life cycle and stock management
+
+Q. Who will primarily benefit from the solution?
+- The organisations (small - medium sized) who are dealing with large number of clients orders everyday
+
+Q. Who will be the users of application?
+- 
+
+Supplier
+========
+- Admin + Workforce (Staff)
+	- Workforce: Somehow customisation for creating the hierarchy (HCM side)
+- Stock Modifier person
+- Approver
+- Goods/product Registration and modifier person
+- Supplier POC for orders
+- Ware House Manager
+- Ware house worker
+- Office Manager
+- Company profile maintainer
+- Quotation master
+- Finance officer
+
+Client:
+=======
+- Explorer
+- Client POCs
+
+
+Q. High level needs by a particular stakeholders/group? How they will interact with Solution?
+
+
+
+Supplier:
+- User Registration
+- Company Registration
+- WareHouse Registration
+- Product Registration
+- Stock Update for a Warehouse
+- Reviews & Prepares & Provides Quotation via mail with registration link
+- Supplier: Acknowledgement and quick tracking id/link [is Secure?]
+- Review past orders and Payment history
+- Sales Analytics
+- 
+
+Client:
+- Explore Product Catalog
+- Creates cart of products and Request Quotation on mail
+- registers themselves [On Client Portal], Reviews quotation
+- Reviews Order and its invoice and places order
+- Is redirected to Payment Portal
+- Payment portal: Advance Payment, Down Payment
+- Check Past orders
+
+
+
+Q. What are the key functions users need to be perform while using it?
+- Will be decided while developing
+
+Q. What does product or service do?
+- To automate the process of Order life cycle and stock management
+
+Q. Who do you expect to use product or service when finished?
+- The organisations (small - medium sized) who are dealing with large number of clients orders everyday
+
+
+
+
+
+Assumed Position Based Access:
+----------------------------------
+Admin:
+- Company Registration
+- President Registration
+- Office Registrations
+- Site Head Registration
+- Employee Registration
+- Employee Role delegation [HCM]
+- other 
+
+Company profile maintainer:
+- Company Profile maintain
+- Client company and POC registration and maintainer if unregistered 
+- Feeds maintain FW
+
+Site Head:
+- Office Registrations
+- Ware house Registration
+
+
+Assumed Business Hierarchy
+----------------------------------
+(Headquarter) => President
+- City A Office => Site Head
+	- Multiple Warehouses => Warehouse Manager & Staff
+- City B Office
+	- Multiple Warehouses
+- City C Office
+	- Multiple Warehouses
+
+
+
+An expected basic business cycle:
+----------------------------------
+Client: Explores products
+Client: creates a cart of products and requests quotation for the same by providing Email
+
+Supplier: Reviews Cart
+Supplier: Prepares Quotation
+Supplier: Shares quotation and registration link for future communication
+
+Client: Reviews quotation, registers themselves [On Client Portal]
+Client: Reviews Order and its invoice and places order
+Client: Is redirected to Payment Portal
+Client: Payment portal: Advance Payment, Down Payment
+
+Supplier: Acknowledgement and quick tracking id/link [is Secure?]
+
+
+
+
+
+
