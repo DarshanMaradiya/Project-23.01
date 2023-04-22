@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "053fa3a7-198a-4a94-ac82-ed7a65694289",
+		"name": "Eureka Server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17663074"
+	},
+	"item": [
+		{
+			"name": "Home Page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Homepage - Status Code 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8761",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8761"
+				}
+			},
+			"response": []
+		}
+	]
+}
