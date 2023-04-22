@@ -38,7 +38,7 @@ jobs:
       - name: Testing API endpoints of discovery-server
         uses: matt-ball/newman-action@master
         with:
-          collection: ./discovery-server-app/DiscoveryServer.postman_collection.json
+          collection: discovery-server-app/DiscoveryServer.postman_collection.json
       - run: sleep 5
       - name: Shutting down discovery server
         run: kill -9 `lsof -i:8761 -t`
