@@ -11,7 +11,7 @@ name: Integration
 on:
   push:
     branches:
-      - "discovery-server-app"
+      - "sanket/port_correction_eureka"
   pull_request:
     branches:
       - "development"
