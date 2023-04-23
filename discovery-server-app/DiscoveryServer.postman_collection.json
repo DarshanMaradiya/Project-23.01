@@ -3,7 +3,7 @@
 		"_postman_id": "053fa3a7-198a-4a94-ac82-ed7a65694289",
 		"name": "Eureka Server",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "17663074"
+		"_exporter_id": "24521790"
 	},
 	"item": [
 		{
@@ -25,12 +25,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8761",
+					"raw": "http://localhost:8762",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8761"
+					"port": "8762"
 				}
 			},
 			"response": []
