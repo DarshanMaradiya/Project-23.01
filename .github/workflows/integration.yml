@@ -11,7 +11,7 @@ name: Integration
 on:
   push:
     branches:
-      - "darshan/darshan/correct-discovery-server-port"
+      - "darshan/correct-discovery-server-port"
   pull_request:
     branches:
       - "development"
