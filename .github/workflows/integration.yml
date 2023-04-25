@@ -32,10 +32,12 @@ jobs:
           cache: maven
       - name: Build with Maven - discovery-server-app
         run: mvn -B package --file discovery-server-app/pom.xml
+      - name: Build with Maven - user-service-app
+        run: mvn -B package --file user-service-app/pom.xml
       - name: Starting discovery-server
         run: java -jar discovery-server-app/target/discovery-server-app-0.0.1-SNAPSHOT.jar &
       - run: sleep 10
-      - name: Starting user service
+      - name: Starting user-service
         run: java -jar user-service-app/target/user-service-app-0.0.1-SNAPSHOT.jar &
       - run: sleep 10
       - name: Testing API endpoints of discovery-server
