@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "a7f7dd64-53a2-4544-9b9f-b3fa7a377e18",
+		"name": "Demo Address API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24521790",
+		"_collection_link": "https://dark-resonance-186205.postman.co/workspace/Team-Workspace~2e931894-9126-4dd1-8cbb-e960ec8b9636/collection/19525968-a7f7dd64-53a2-4544-9b9f-b3fa7a377e18?action=share&creator=24521790&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Add user with address",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Karsan Patel\",\r\n    \"contactNumber\": \"1234567890\",\r\n    \"number\": \"420\",\r\n    \"structureName\": \"Bright Palace\",\r\n    \"street\": \"Manek Chowk\",\r\n    \"landmark\": \"\",\r\n    \"city\": \"Ahmedabad\",\r\n    \"pinCode\": \"380001\",\r\n    \"district\": \"\",\r\n    \"state\": \"Gujarat\",\r\n    \"country\": \"India\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/address/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"address",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Address By Id (getAddressById)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/address/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"address",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Address [Testing Only]",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/address/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"address",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
