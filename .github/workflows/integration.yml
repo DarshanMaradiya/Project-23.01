@@ -60,4 +60,4 @@ jobs:
       - name: Shutting down discovery server
         run: kill -9 `lsof -i:8761 -t`
       - name: Shutting down user service
-        run: kill -9 `lsof -i:8761 -t`
+        run: kill -9 `lsof -i:8081 -t`
