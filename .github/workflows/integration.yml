@@ -11,7 +11,7 @@ name: Integration
 on:
   push:
     branches:
-      - "darshan/correct-discovery-server-port"
+      - "darshan/feature/user-service"
   pull_request:
     branches:
       - "development"
@@ -35,10 +35,20 @@ jobs:
       - name: Starting discovery-server
         run: java -jar discovery-server-app/target/discovery-server-app-0.0.1-SNAPSHOT.jar &
       - run: sleep 10
+      - name: Starting user service
+        run: java -jar user-service-app/target/user-service-app-0.0.1-SNAPSHOT.jar &
+      - run: sleep 10
       - name: Testing API endpoints of discovery-server
         uses: matt-ball/newman-action@master
         with:
           collection: ./discovery-server-app/DiscoveryServer.postman_collection.json
+      - name: Testing API endpoints of user service
+        uses: matt-ball/newman-action@master
+        with:
+          collection: ./user-service-app/UserService.postman_collection.json
+          environment: ./OrderManagementSystem.postman_environment.json
       - run: sleep 5
       - name: Shutting down discovery server
+        run: kill -9 `lsof -i:8761 -t`
+      - name: Shutting down user service
         run: kill -9 `lsof -i:8761 -t`
