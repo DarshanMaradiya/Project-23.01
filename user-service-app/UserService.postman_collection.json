@@ -1,0 +1,98 @@
+{
+	"info": {
+		"_postman_id": "a9432880-5b7d-4593-b2bc-2c175ebbe5ef",
+		"name": "User Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17663074"
+	},
+	"item": [
+		{
+			"name": "Valid User With New Email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status Code 201\", function () {",
+							"  pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.test(\"New Email Check\", () => {",
+							"    var jsonRespone = JSON.parse(responseBody);",
+							"    pm.expect(jsonRespone).to.have.property('id');",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"John\",\n    \"lastName\": \"Snow\",\n    \"emailId\": \"john.snow@email.com\",\n    \"password\": \"Password@123\",\n    \"confirmPassword\": \"Password@123\",\n    \"phoneNumber\": \"789462131\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:{{USER_SERVICE_PORT}}/api/user/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{USER_SERVICE_PORT}}",
+					"path": [
+						"api",
+						"user",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User By Registered Email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status Code 200\", function () {",
+							"  pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"User With Registered Email\", () => {",
+							"    var jsonRespone = JSON.parse(responseBody);",
+							"    pm.expect(jsonRespone).to.have.property('id');",
+							"    pm.expect(jsonRespone.emailId).to.equals(\"john.snow@email.com\");",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{USER_SERVICE_PORT}}/api/user/john.snow@email.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{USER_SERVICE_PORT}}",
+					"path": [
+						"api",
+						"user",
+						"john.snow@email.com"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
