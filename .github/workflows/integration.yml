@@ -30,6 +30,13 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
+      - name: Starting MySQL server
+        uses: mirromutth/mysql-action@v1.1
+        with:
+          mysql database: 'OrderManagementSystem'
+          mysql root password: 'password' # Required if "mysql user" is empty, default is empty. The root superuser password
+          mysql user: 'root'
+          mysql password: 'password'
       - name: Build with Maven - discovery-server-app
         run: mvn -B package --file discovery-server-app/pom.xml
       - name: Build with Maven - user-service-app
